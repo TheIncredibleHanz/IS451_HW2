@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan and his Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Jan's life</h1>
+    </header>
+
+    <main>
+        <section id="image-section">
+            <img src="ai-generated-image.jpg" alt="AI Generated Image">
+        </section>
+        <section id="description">
+            <p>This AI generated picture is a representation of Jan's adventurous spirit. This page is an assignment for University of Washington's IS 451 class of Spring 2024.</p>
+            <p>Below are some of Jan's hobbies and attended universities.</p>
+        </section>
+        <section id="hobbies">
+            <h2>Jan's hobbies</h2>
+            <ul>
+                <li>Olympic fencing</li>
+                <li>Sailing on a pirate ship</li>
+                <li>Learning about ML and AI</li>
+                <li>Playing videogames with friends</li>
+                <li>Adventuring!</li>
+            </ul>
+        </section>
+        <section id="schools">
+            <h2>Attended universities</h2>
+            <label for="schools-dropdown">Select a school:</label>
+            <select id="schools-dropdown" onchange="showSchoolImage()">
+                <option value="">--Select a university--</option>
+                <option value="school1">University of Washington</option>
+                <option value="school2">Prague University of Economics</option>
+                <option value="school3">Bilgi University in Istanbul</option>
+                <option value="school4">Czech Technical University</option>
+            </select>
+            <div id="school-image-container">
+                <img id="school-image" src="" alt="School Image" style="display: none;">
+            </div>
+        </section>
+        <section id="navigate-back">
+            <button onclick="location.href='index.html'">Back to Home</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Jan Jiran. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSchoolImage() {
+            var dropdown = document.getElementById('schools-dropdown');
+            var imageContainer = document.getElementById('school-image-container');
+            var image = document.getElementById('school-image');
+            var selectedValue = dropdown.value;
+
+            var images = {
+                school1: 'UW.png',
+                school2: 'VSE.png',
+                school3: 'Bilgi.png',
+                school4: 'CVUT.jpg'
+            };
+
+            if (selectedValue) {
+                image.src = images[selectedValue];
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
